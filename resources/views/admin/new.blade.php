@@ -17,3 +17,9 @@ new page
 new page
 @endsection
 
+
+@section('content')
+<h2>Test Code</h2>
+@endsection
+
+
