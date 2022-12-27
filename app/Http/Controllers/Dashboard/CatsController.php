@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Models\Cats;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCatRequest;
 
 class CatsController extends Controller
 {
@@ -38,8 +39,9 @@ class CatsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCatRequest $request)
     {
+
         Cats::create([
             'name'=>$request->name,
             'active'=>$request->active,
@@ -93,6 +95,27 @@ class CatsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function archive()
+    {
+        $cat = Cats::onlyTrashed()->get();
+        return view('admin.cats.archive',compact('cat'));
+       
+    }
+
+    public function restore($id)
+    {
+        $cat = Cats::withTrashed()->findOrFail($id)->restore();
+        
+        return redirect()->route('cats.index');
+       
+    }
+
+    public function force($id)
+    {
+        $cat = Cats::onlyTrashed()->findOrFail($id)->forceDelete();
+        return redirect()->route('cats.archive');
+    }
+
     public function destroy($id)
     {
         Cats::destroy($id);
