@@ -63,8 +63,7 @@
                                         @endif
                                     </td>
                                     <td>{{ $cat->created_at }}</td>
-                                    <td><a href="{{ route('cats.edit', $cat->id) }}" class="btn btn-outline-info">Update</a>
-                                    </td>
+                                    <td><a href="{{ route('cats.edit', $cat->id) }}" class="btn btn-outline-info">Update</a></td>
                                     <td>
                                         <form method="post" action="{{route('cats.destroy',$cat->id)}}">
                                         @csrf
@@ -74,7 +73,7 @@
                                     </td>
                                 </tr>
                             @empty
-                                <td colspan="3" class="text-center">No Category Addedd
+                                <td colspan="4" class="text-center">No Category Added</td>
                             @endforelse
 
 
