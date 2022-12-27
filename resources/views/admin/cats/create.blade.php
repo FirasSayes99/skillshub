@@ -25,15 +25,23 @@
             <div class="card-header">
                 <h3 class="card-title">Add Category</h3>
             </div>
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger mt-2" role="alert">
+                        {{ $error }}
+                    </div>
+                @endforeach
+            @endif
 
 
-            <form method="post" action="{{route('cats.store')}}">  
-            @csrf
-                
+            <form method="post" action="{{ route('cats.store') }}">
+                @csrf
+
                 <div class="card-body">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Category Name">
+                        <input type="text" class="form-control" value="{{old('name')}}" id="name" name="name"
+                            placeholder="Enter Category Name">
                     </div>
                     <div class="form-group">
                         <label for="status">Status</label>
@@ -43,16 +51,16 @@
                                 <div class="icheck-primary d-inline mr-3">
                                     <input type="radio" id="radioPrimary1" name="active" value="1" checked="">
                                     <label for="radioPrimary1">
-                                    Active
+                                        Active
                                     </label>
                                 </div>
                                 <div class="icheck-primary d-inline">
                                     <input type="radio" id="radioPrimary2" name="active" value="0">
                                     <label for="radioPrimary2">
-                                    Not Active
+                                        Not Active
                                     </label>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
