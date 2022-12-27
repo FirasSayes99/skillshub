@@ -58,9 +58,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/inline.html" class="nav-link">
+                <a href="{{route('cats.archive')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inline</p>
+                  <p>Archives</p>
                 </a>
               </li>
               <li class="nav-item">
