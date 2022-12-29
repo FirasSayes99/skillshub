@@ -16,7 +16,6 @@
             </button>
             <!-- /Mobile toggle -->
         </div>
-
         <!-- Navigation -->
         <nav id="nav">
             <ul class="main-menu nav navbar-nav navbar-right">
@@ -25,10 +24,11 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                         aria-expanded="false">Categories <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Design</a></li>
-                        <li><a href="#">Management</a></li>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Tariq</a></li>
+                    @foreach ($cats as $cat )
+                       <li><a href="{{route('cat.show',$cat->id)}}">{{$cat->name}}</a></li> 
+                    @endforeach
+                        
+                       
 
                     </ul>
                 </li>
