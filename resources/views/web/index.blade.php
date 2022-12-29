@@ -2,6 +2,7 @@
 
 @section('content')
     <!-- Home -->
+    
     <div id="home" class="hero-area">
 
         <!-- Backgound Image -->
