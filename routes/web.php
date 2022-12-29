@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Dashboard\CatsController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Web\CatsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +15,16 @@ use App\Http\Controllers\DashboardController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-
 Route::get('/', function () {
     return view('web.index');
 });
 
+*/
 
+
+Route::get('/',[HomeController::class,'index'])->name('Home');
+
+Route::get('cat/show/{id}',[catsController::class,'show'])->name('cat.show');
 
 /* dashboard Controller */
 Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
