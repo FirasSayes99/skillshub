@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name',50);
             $table->string('img');
             $table->boolean('active')->default(true);
-            $table->foreignId('cat_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('cats_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
