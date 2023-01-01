@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('exams', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('skill_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('skills_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->boolean('active')->default(true);
             $table->string('name',50);
             $table->text('desc');
