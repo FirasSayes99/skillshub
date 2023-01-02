@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -28,7 +29,7 @@ Route::get('cat/show/{id}',[catsController::class,'show'])->name('cat.show');
 
 /* dashboard Controller */
 Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
-
+Route::get('/contact',[ContactController::class,'index'])->name('contact');
 
 
 /* dashboard Controller */
