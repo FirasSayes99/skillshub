@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('email');
             $table->string('phone');
-            $table->string('facebook')->nullable;
-            $table->string('youtube')->nullable;
-            $table->string('instagram')->nullable;
-            $table->string('telegram')->nullable;
-            $table->string('Twitter')->nullable;
-            $table->string('linkedin')->nullable;
+            $table->string('facebook')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('telegram')->nullable();
+            $table->string('Twitter')->nullable();
+            $table->string('linkedin')->nullable();
             $table->timestamps();
         });
     }
