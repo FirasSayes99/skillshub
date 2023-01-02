@@ -21,7 +21,7 @@ class CatsController extends Controller
         //$cats = Cats::select('id','name')->get();//// طريقة اضافة ال داتا بال كومباكت compact
         $data['cat']=Cats::findOrFail($id);
         $data['cats']=Cats::select('id','name')->get();
-        $data['skills']=$data['cat']->skills;
+        $data['skills']=$data['cat']->skills()->paginate(6);
         
 
         return view('web.cat.show')->with($data);
