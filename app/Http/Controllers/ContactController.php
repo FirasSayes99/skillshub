@@ -6,6 +6,7 @@ use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 
+
 class ContactController extends Controller
 {
     public function index(){
@@ -27,7 +28,7 @@ class ContactController extends Controller
             'body'=>$request->body,
         ]);
 
-
+        
         $request->session()->flash('success','your message send successfully');
         return redirect(route('contact.create'));
     }
