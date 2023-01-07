@@ -50,7 +50,7 @@
                                     <img src="./img/skill1.jpg" alt="">
                                 </a>
                             </div>
-                            <h4><a href="skill.html">{{ $skill->name }}</a></h4>
+                            <h4><a href="{{route('skills.show',$skill->id)}}">{{ $skill->name }}</a></h4>
                             <div class="blog-meta">
                                 {{-- <span>18 Oct, 2017</span> --}}
                                 <span>{{  Carbon\Carbon::parse($skill->created_at)->format('d M, Y') }}</span>
