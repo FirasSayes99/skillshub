@@ -29,7 +29,8 @@ Route::get('cat/show/{id}',[catsController::class,'show'])->name('cat.show');
 
 /* dashboard Controller */
 Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
-Route::get('/contact',[ContactController::class,'index'])->name('contact');
+Route::get('/contact',[ContactController::class,'index'])->name('contact.create');
+Route::POST('/contact/message',[ContactController::class,'send'])->name('contact.store');
 
 
 /* dashboard Controller */
