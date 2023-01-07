@@ -9,7 +9,7 @@ class Exam extends Model
 {
     use HasFactory;
 
-    public function skill(){
+    public function skills(){
         return $this->belongsTo(Skills::class);
     }
 
