@@ -30,7 +30,7 @@ Route::get('/',[HomeController::class,'index'])->name('Home');
 Route::get('cat/show/{id}',[catsController::class,'show'])->name('cat.show');
 
 /* dashboard Controller */
-Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
+//Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
 Route::get('/contact',[ContactController::class,'index'])->name('contact.create');
 Route::POST('/contact/message',[ContactController::class,'send'])->name('contact.store');
 
@@ -40,16 +40,3 @@ Route::get('/exams/show/{id}',[ExamController::class,'show'])->name('exams.show'
 Route::get('/exams/questions/{id}',[ExamController::class,'questions'])->name('exams.questions');
 
 
-/* dashboard Controller */
-/*
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-*/
-require __DIR__.'/auth.php';
