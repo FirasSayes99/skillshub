@@ -293,6 +293,8 @@ textarea:focus {
 	Navigation
 \*------------------------------------*/
 
+
+
 #header {
     position: relative;
     left: 0;
@@ -314,7 +316,19 @@ textarea:focus {
     color: #FFF;
 }
 
-.main-menu li a {
+.logout{
+    background-color: transparent;
+    border:0;
+    display: block;
+    position: relative; 
+    padding:14px 15px;
+    font-family: 'Lato', sans-serif;
+    color: #374050;
+    font-weight: 700;
+
+}
+
+.main-menu li a ,.logout{
     text-transform: uppercase;
     -webkit-transition: 0.2s all;
     transition: 0.2s all;
@@ -379,7 +393,7 @@ textarea:focus {
     .main-menu {
         margin: 0;
     }
-    .main-menu li a {
+    .main-menu li a ,.logout {
         color: #374050 !important;
         display: inline-block;
         margin-left: 40px;
@@ -749,7 +763,7 @@ textarea:focus {
     margin-left: 15px
 }
 
-.footer-nav li a {
+.footer-nav li a,.logout {
     display: block;
     text-transform: uppercase;
     -webkit-transition: 0.2s color;
