@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('exam_user', function (Blueprint $table) {
-            
-            $table->float('right_answer');
-            $table->smallInteger('time_mins');
-            $table->enum('status',['open','closed']);
+            $table->id();
+            $table->float('score')->nullable();
+            $table->smallInteger('time_mins')->nullable();
+            $table->enum('status',['open','closed'])->default('closed');
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('exam_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
 
