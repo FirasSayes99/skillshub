@@ -36,9 +36,10 @@
 
 					<!-- login form -->
 					<div class="col-md-6 col-md-offset-3">
+					@include('inc.message')
 						<div class="contact-form">
 							<h4>Sign Up</h4>
-							<form method="post" action="{{ url('register') }}">
+							<form method="POST" action="{{ url('register') }}">
                             @csrf
 								<input class="input" type="text" name="name" placeholder="Name">
 								<input class="input" type="email" name="email" placeholder="Email">
