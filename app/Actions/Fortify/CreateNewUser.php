@@ -38,7 +38,7 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
             'role_id'=>$studentRole->id,
         ]);
-        return redirect('route('/')');
+        redirect( url('/') );
     }
 
 }
