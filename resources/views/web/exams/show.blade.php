@@ -51,7 +51,11 @@
 						<!-- /blog post -->
                         
                         <div>
-                            <a href="{{route('exams.questions',$exam->id)}}" class="main-button icon-button pull-left">Start Exam</a>
+						<form method="POST" action="{{route('exams.start',$exam->id)}}" >
+						@csrf
+						<button type="submit" class="main-button icon-button pull-left">Start Exam</button>
+						</form>
+                            {{--<a href="{{route('exams.questions',$exam->id)}}" class="main-button icon-button pull-left">Start Exam</a>--}}
                         </div>
 					</div>
 					<!-- /main blog -->
