@@ -27,7 +27,7 @@ Route::get('/', function () {
 
 Route::get('/',[HomeController::class,'index'])->name('Home');
 
-Route::get('cat/show/{id}',[catsController::class,'show'])->name('cat.show');
+Route::get('cat/show/{id}',[catsController::class,'show'])->name('cat.show')->middleware('verified');
 
 /* dashboard Controller */
 //Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
@@ -37,6 +37,8 @@ Route::POST('/contact/message',[ContactController::class,'send'])->name('contact
 Route::get('/skills/show/{id}',[SkilsController::class,'show'])->name('skills.show');
 
 Route::get('/exams/show/{id}',[ExamController::class,'show'])->name('exams.show');
-Route::get('/exams/questions/{id}',[ExamController::class,'questions'])->name('exams.questions');
+Route::get('/exams/questions/{id}',[ExamController::class,'questions'])->name('exams.questions')->middleware('auth','verified','student');
+Route::post('/exams/start/{id}',[ExamController::class,'start'])->name('exams.start')->middleware('auth','verified','student');
+Route::post('/exams/submit/{id}',[ExamController::class,'start'])->name('exams.submit')->middleware('auth','verified','student');
 
 
