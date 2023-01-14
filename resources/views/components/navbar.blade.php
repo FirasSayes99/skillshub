@@ -14,14 +14,21 @@
             </ul>
         </li>
         <li><a href="{{ route('contact.create') }}">Contact</a></li>
-        <li><a href="login.html">Sign In</a></li>
-        <li><a href="{{ url('register') }}">Sign Up</a></li>
-        <li>
-            <form mthod="post" action="{{ url('logout') }}">
-                @csrf
-                <input class="logout" type="submit" value="logout">
-            </form>
+        @guest
+            <li><a href="{{ url('login') }}">Sign In</a></li>
+            <li><a href="{{ url('register') }}">Sign Up</a></li>
+        @endguest
+        @auth
+            <li>
+                <form method="post" action="{{ url('logout') }}">
+                    @csrf
+                    <input class="logout" type="submit" value="Logout">
+                </form>
 
-        </li>
+            </li>
+        @endauth
+
+
+
     </ul>
 </nav>
