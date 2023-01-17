@@ -39,6 +39,6 @@ Route::get('/skills/show/{id}',[SkilsController::class,'show'])->name('skills.sh
 Route::get('/exams/show/{id}',[ExamController::class,'show'])->name('exams.show');
 Route::get('/exams/questions/{id}',[ExamController::class,'questions'])->name('exams.questions')->middleware('auth','verified','student');
 Route::post('/exams/start/{id}',[ExamController::class,'start'])->name('exams.start')->middleware('auth','verified','student');
-Route::post('/exams/submit/{id}',[ExamController::class,'start'])->name('exams.submit')->middleware('auth','verified','student');
+Route::post('exams/submit/{id}',[ExamController::class,'submit'])->name('exams.submit')->middleware('auth','verified','student');
 
 
