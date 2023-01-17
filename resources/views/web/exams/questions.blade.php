@@ -45,6 +45,9 @@
 
             <!-- row -->
             <div class="row">
+                <form id="exam-submit-form" method="post" action="{{ url("exams/submit/$exam->id") }}">
+                @csrf
+                </form>
 
                 <!-- main blog -->
                 <div id="main" class="col-md-9">
@@ -60,29 +63,29 @@
                                     <div class="panel-body">
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios1"
-                                                    value="option1">
+                                                <input form="exam-submit-form" type="radio" name="answers[{{ $question->id }}]" id="optionsRadios1"
+                                                    value="1">
                                                 {{ $question->option_1 }}
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios2"
-                                                    value="option2">
+                                                <input form="exam-submit-form" type="radio" name="answers[{{ $question->id }}]" id="optionsRadios2"
+                                                    value="2">
                                                 {{ $question->option_2 }}
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios3"
-                                                    value="option3">
+                                                <input form="exam-submit-form" type="radio" name="answers[{{ $question->id }}]" id="optionsRadios3"
+                                                    value="3">
                                                 {{ $question->option_3 }}
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios3"
-                                                    value="option3">
+                                                <input form="exam-submit-form" type="radio" name="answers[{{ $question->id }}]" id="optionsRadios3"
+                                                    value="4">
                                                 {{ $question->option_4 }}
                                             </label>
                                         </div>
@@ -99,7 +102,7 @@
                     <!-- /blog post -->
 
                     <div>
-                        <button class="main-button icon-button pull-left">Submit</button>
+                        <button form="exam-submit-form" type="submit" class="main-button icon-button pull-left">Submit</button>
                         <button class="main-button icon-button btn-danger pull-left ml-sm">Cancel</button>
                     </div>
                 </div>
@@ -122,7 +125,8 @@
                             @endfor
 
                         </li>
-                        <div class="example" data-timer="{{ 10 }}"></div>
+                        
+                        <div class="example" data-timer="{{ $exam->duration_minutes * 60 }}"></div>
 
                     </ul>
                     <!-- /exam details widget -->
@@ -153,7 +157,7 @@
 
     }).addListener(function(unit, value, total) {
     if(total <= 0){
-    alert("test")
+    $("#exam-submit-form").submit();
     
     };
 }); 
