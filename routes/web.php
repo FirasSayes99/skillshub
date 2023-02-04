@@ -42,3 +42,5 @@ Route::post('/exams/start/{id}',[ExamController::class,'start'])->name('exams.st
 Route::post('exams/submit/{id}',[ExamController::class,'submit'])->name('exams.submit')->middleware('auth','verified','student');
 
 
+Route::post('exams/end_exam/{id}',[ExamController::class,'end_exam'])->name('end_exam');
+

@@ -71,6 +71,11 @@ class ExamController extends Controller
        ]);
        return redirect(url("/exams/show/$examId"));
     }
+    public function end_exam(Request $request){
+        return view('web.exams.exam-end');
+
+    }
+   
 }
 
 
