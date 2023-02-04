@@ -127,6 +127,7 @@
                         </li>
                         
                         <div class="example" data-timer="{{ $exam->duration_minutes * 60 }}"></div>
+                        
 
                     </ul>
                     <!-- /exam details widget -->
